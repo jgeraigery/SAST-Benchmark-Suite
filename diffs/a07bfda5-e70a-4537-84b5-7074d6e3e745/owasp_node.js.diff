@@ -91,12 +91,12 @@
      let userInput = req.query.input;
      res.send("<html><body>" + userInput + "</body></html>");
  });
-+    res.send("Deserialized object: " + escape(JSON.stringify(obj)));
  
--
+ 
  app.post('/insecure_deserialization', express.json(), (req, res) => {
      let obj = JSON.parse(req.body.data);
-     res.send("Deserialized object: " + JSON.stringify(obj));
+-    res.send("Deserialized object: " + JSON.stringify(obj));
++    res.send("Deserialized object: " + escape(JSON.stringify(obj)));
  });
  
  
