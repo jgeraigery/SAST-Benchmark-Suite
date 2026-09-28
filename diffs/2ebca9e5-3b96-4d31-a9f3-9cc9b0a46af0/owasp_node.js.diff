@@ -85,12 +85,12 @@
  app.get('/security_misconfig', (req, res) => {
      res.setHeader("X-Powered-By", "Express"); 
      res.send("Security Misconfiguration Example");
--});
-+    res.send("<html><body>" + escape(userInput) + "</body></html>");
+ });
  
  app.get('/xss_vulnerability', (req, res) => {
      let userInput = req.query.input;
-     res.send("<html><body>" + userInput + "</body></html>");
+-    res.send("<html><body>" + userInput + "</body></html>");
++    res.send("<html><body>" + escape(userInput) + "</body></html>");
  });
  
  
